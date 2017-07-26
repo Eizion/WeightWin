@@ -9,6 +9,7 @@ function calculateBMI() {
     //math
     var heightInches = (hfeet * 12) + hinch;
     bmi = (weight * 703)/Math.pow(heightInches, 2);
+    bmiEdit = bmi.toFixed(2);
 
     //logic
     var message;
@@ -23,7 +24,7 @@ function calculateBMI() {
     }
 
     //out
-    document.getElementById("output").innerHTML = "Your BMI is " + bmi + ". " + message;
+    document.getElementById("output").innerHTML = "Your BMI is " + bmiEdit + ". " + message;
 
     $(document).ready(function() {
         if (bmi >= 30) {

@@ -64,6 +64,14 @@ html {
     min-height: 1000px;
 }
 
+.fields
+{
+    width:150px;
+    margin: 10px;
+    align:center;
+
+}
+
 .nav_li {
     border: 2px solid #ffffff;
     background-color: #4484ce;

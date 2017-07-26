@@ -5,8 +5,7 @@
     <link type="text/css" rel="stylesheet" href="media/css/stylesheet.css"/>
     <title>WeightWin</title>
 </head>
-<body>
-<div>
+<body onload="check()">
 
 <div class="header">
     <div class="nav">
@@ -19,10 +18,26 @@
     <h2>MIST 7571 Project</h2>
 </div>
 
-<div class="content">Please click here to authorize use of the app <a href="https://api.moves-app.com/oauth/v1/authorize?response_type=code&client_id=N40WSXzBPjQNuf20TYXJuQ9yTO9VUdqC&scope=activity
-">Moves</a>
-</div>
+    <div class="content">
+        <img src="media/images/logo.PNG">
 
+        <h1>WeightWin</h1>
+
+        <p>Welcome to our webapp! Please sign up!</p>
+
+        <div id="message"></div>
+        <div id="personalData">
+            <span class="fields">First Name:</span> <input type ="text" id="fname"><br>
+            <span class="fields">Last Name:</span> <input type="text" id="lname"><br>
+            <span class="fields">Email Address:</span> <input type="text" id="email"><br>
+            <span class="fields">Address:</span> <input type="text" id="address"><br>
+            <input type="button" value="Submit Form" onClick="submit()">
+            <input type="button" value="Reset Form" onClick="clearFormAndLs()">
+
+        </div>
+
+
+    </div>
 
 </body>
 </html>
