@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Summary</title>
+    <link type="text/css" rel="stylesheet" href="media/css/stylesheet.css"/>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script language="JavaScript" type="text/javascript">
+
+
+
+        function doRequest() {
+            console.log("doRequest actually ran");
+            var data = null;
+
+            var xhr = new XMLHttpRequest();
+            xhr.withCredentials = true;
+
+            xhr.open("GET", "https://api.moves-app.com/api/1.1/user/summary/daily/20170725?access_token=uYHv_S14HjuqQt3wXxLA37OH6X0dns429ABLeKiwVVRx1LUWPhmdZKjBx19F8gWb");
+            xhr.setRequestHeader("cache-control", "no-cache");
+            xhr.setRequestHeader("postman-token", "f4f8b5e0-f93c-e8d7-4acb-60884f94c8b7");
+            xhr.setRequestHeader("Access-Control-Allow-Origin", "http://localhost:63342");
+            xhr.setRequestHeader("Access-Control-Allow-Credentials", "true");
+            xhr.setRequestHeader("Access-Control-Allow-Methods", "GET,HEAD,OPTIONS,POST,PUT");
+            xhr.setRequestHeader("Access-Control-Allow-Headers", "Access-Control-Allow-Header, Origin,Accept, X-Requested-With, Content-Type, Access-Control-Request-Method, Access-Control-Request-Headers");
+            xhr.send(data);
+
+            xhr.addEventListener("readystatechange", function () {
+                if (this.readyState === 4) {
+                    console.log(this.responseText);
+                    var parsed = JSON.parse(this.responseText);
+                    console.log(parsed);
+                    console.log("Level 1" + parsed[0]);
+                    console.log("Level 2" + parsed[0].summary[0].activity);
+
+                    var actTable = "<table border = '1'>";
+                    actTable += "<tr><td>Activity</td><td>Group</td><td>Duration</td><td>Distance</td><td>Steps</td><td>Calories</td></tr>";
+
+                    for (i=0; i<parsed[0].summary.length; i++) {
+                        actTable += "<tr>";
+
+                        activity = parsed[0].summary[i].activity;
+                        actTable += "<td>" + activity + "</td>";
+
+                        group = parsed[0].summary[i].group;
+                        actTable += "<td>" + group + "</td>";
+
+                        duration = parsed[0].summary[i].duration;
+                        actTable += "<td>" + duration + "</td>";
+
+                        distance = parsed[0].summary[i].distance;
+                        actTable += "<td>" + distance + "</td>";
+
+                        steps = parsed[0].summary[i].steps;
+                        actTable += "<td>" + steps + "</td>";
+
+                        calories = parsed[0].summary[i].calories;
+                        actTable += "<td>" + calories + "</td>";
+
+                        actTable +="</tr>";
+                    }
+                    actTable += "</table>";
+
+                    document.getElementById()
+                }
+            });
+
+
+        }
+
+
+    </script>
+
+
+
+</head>
+<body>
+
+<div class="header">
+    <div class="nav">
+        <ul id="nav_ul">
+            <li class="nav_li"><a href="index.html">Home</a></li>
+            <li class="nav_li"><a href="bmi.html">BMI</a></li>
+            <li class="nav_li"><a href="summary.html">Track</a></li>
+        </ul>
+    </div>
+    <h2>MIST 7571 Project</h2>
+</div>
+
+<h1>Summary from Moves</h1>
+
+<button type="button" name="click" id="calculate" onclick="doRequest();">Click to pull up your stats!</button>
+
+<div id="output"></div>
+
+</body>
+</html>

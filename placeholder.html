@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div class="header">
+    <div class="nav">
+        <ul id="nav_ul">
+            <li class="nav_li"><a href="index.html">Home</a></li>
+            <li class="nav_li"><a href="bmi.html">BMI</a></li>
+            <li class="nav_li"><a href="summary.html">Track</a></li>
+        </ul>
+    </div>
+    <h2>MIST 7571 Project</h2>
+</div>
+
+<h1>BMI Calculator</h1>
+
+<form name="myForm" method="get">
+    <table id="overview" border="1">
+        <tbody>
+        <tr id="under">
+            <td>Underweight</td>
+            <td> Less than 18.5</td>
+        </tr>
+        <tr id="normal">
+            <td>Normal Weight</td>
+            <td>18.5 - 24.9</td>
+        </tr>
+        <tr id="over">
+            <td>Overweight</td>
+            <td>25 - 29.9</td>
+        </tr>
+        <tr id="obese">
+            <td>Obesity</td>
+            <td>30 or more</td>
+        </tr>
+        </tbody>
+    </table>
+    <br>
+    <br>
+    <table>
+        <tbody>
+        <tr>
+            <td>
+                <label for="height-feet">Height</label>
+            </td>
+            <td>
+                <input type="text" id="height-feet" name="height-feet" value=""> ft <input type="text" id="height-inch" name="height-inch" value=""> in
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="weight">Weight</label>
+            </td>
+            <td>
+                <input type="text" id="weight" name="weight" value=""> lbs
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <br>
+                <input type="button" id="calculate" name="calculate" value="Calculate" onclick="calculateBMI();">
+                <input type="reset" id="Reset" name="Reset" value="Reset" onclick="clearform();">
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</form>
+<div id="output">
+</div>
+
+</body>
+</html>
