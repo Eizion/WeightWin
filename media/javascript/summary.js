@@ -5,7 +5,7 @@ function doRequest() {
     var xhr = new XMLHttpRequest();
     xhr.withCredentials = true;
 
-    xhr.open("GET", "https://api.moves-app.com/api/1.1/user/summary/daily/20170725?access_token=uYHv_S14HjuqQt3wXxLA37OH6X0dns429ABLeKiwVVRx1LUWPhmdZKjBx19F8gWb");
+    xhr.open("GET", "https://api.moves-app.com/api/1.1/user/summary/daily/20170726?access_token=uYHv_S14HjuqQt3wXxLA37OH6X0dns429ABLeKiwVVRx1LUWPhmdZKjBx19F8gWb");
     xhr.setRequestHeader("cache-control", "no-cache");
     xhr.setRequestHeader("postman-token", "f4f8b5e0-f93c-e8d7-4acb-60884f94c8b7");
     xhr.setRequestHeader("Access-Control-Allow-Origin", "http://localhost:63342");

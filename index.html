@@ -26,17 +26,27 @@
         <p>Welcome to our webapp! Please sign up!</p>
 
         <div id="message"></div>
-        <div id="personalData">
-            <span class="fields">First Name:</span> <input type ="text" id="fname"><br>
-            <span class="fields">Last Name:</span> <input type="text" id="lname"><br>
-            <span class="fields">Email Address:</span> <input type="text" id="email"><br>
-            <span class="fields">Address:</span> <input type="text" id="address"><br>
-            <input type="button" value="Submit Form" onClick="submit()">
-            <input type="button" value="Reset Form" onClick="clearFormAndLs()">
 
-        </div>
-
-
+            <table id="reg">
+                <tbody>
+                    <tr>
+                        <td><label for="fname">First Name:</label></td>
+                        <td><input type ="text" id="fname" name="fname" value=""></td>
+                    </tr>
+                    <tr>
+                        <td><label for="lname">Last Name:</label></td>
+                        <td><input type ="text" id="lname" name="lname" value=""></td>
+                    </tr>
+                    <tr>
+                        <td><label for="email">Email:</label></td>
+                        <td><input type ="text" id="email" name="email" value=""></td>
+                    </tr>
+                    <tr>
+                        <td><input type="button" value="Submit Form" onClick="submit()"></td>
+                        <td><input type="button" value="Reset Form" onClick="clearFormAndLs()"></td>
+                    </tr>
+                </tbody>
+            </table>
     </div>
 
 </body>
