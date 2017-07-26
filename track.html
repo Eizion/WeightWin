@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Track</title>
+    <link type="text/css" rel="stylesheet" href="media/css/stylesheet.css"/>
+
+    <script language="JavaScript" type="text/javascript">
+
+        /*var request = null;
+
+        function doRequest(){
+            request = new XMLHttpRequest();
+            var url = "https://api.moves-app.com/api/1.1/user/summary/daily/20170725?access_token=uYHv_S14HjuqQt3wXxLA37OH6X0dns429ABLeKiwVVRx1LUWPhmdZKjBx19F8gWb";
+            request.open("GET", url, true);
+            request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded; charset=UTF-8');
+            request.setRequestHeader('Authorization', 'Token c00a1fa8364b950cbbd75f00d1841f7baa622c0f');
+            request.setRequestHeader("Access-Control-Allow-Origin", "http://localhost:63342");
+            request.setRequestHeader("Access-Control-Allow-Credentials", "true");
+            request.setRequestHeader("Access-Control-Allow-Methods", "GET,HEAD,OPTIONS,POST,PUT");
+            request.setRequestHeader("Access-Control-Allow-Headers", "Access-Control-Allow-Header, Origin,Accept, X-Requested-With, Content-Type, Access-Control-Request-Method, Access-Control-Request-Headers");
+            request.send();
+            console.log("status" + request.status);
+            console.log(request.statusText);
+        }*/
+
+        function doRequest() {
+            var data = null;
+
+            var xhr = new XMLHttpRequest();
+            xhr.withCredentials = true;
+
+            xhr.addEventListener("readystatechange", function () {
+                if (this.readyState === 4) {
+                    console.log(this.responseText);
+                }
+            });
+
+            xhr.open("GET", "https://api.moves-app.com/api/1.1/user/summary/daily/20170725?access_token=uYHv_S14HjuqQt3wXxLA37OH6X0dns429ABLeKiwVVRx1LUWPhmdZKjBx19F8gWb");
+            xhr.setRequestHeader("cache-control", "no-cache");
+            xhr.setRequestHeader("postman-token", "f4f8b5e0-f93c-e8d7-4acb-60884f94c8b7");
+            xhr.setRequestHeader("Access-Control-Allow-Origin", "http://localhost:63342");
+            xhr.setRequestHeader("Access-Control-Allow-Credentials", "true");
+            xhr.setRequestHeader("Access-Control-Allow-Methods", "GET,HEAD,OPTIONS,POST,PUT");
+            xhr.setRequestHeader("Access-Control-Allow-Headers", "Access-Control-Allow-Header, Origin,Accept, X-Requested-With, Content-Type, Access-Control-Request-Method, Access-Control-Request-Headers");
+
+            xhr.send(data);
+        }
+
+
+    </script>
+
+
+
+</head>
+<body>
+
+<div class="header">
+    <div class="nav">
+        <ul id="nav_ul">
+            <li class="nav_li"><a href="index.html">Home</a></li>
+            <li class="nav_li"><a href="bmi.html">BMI</a></li>
+            <li class="nav_li"><a href="track.html">Track</a></li>
+        </ul>
+    </div>
+    <h2>MIST 7571 Project</h2>
+</div>
+
+<h1>Track</h1>
+
+<!--<script src="http://platform.fatsecret.com/js?key=246e9caad1184408b0f9cd963bd83bf7&auto_load=true"></script>-->
+
+<a href="https://api.moves-app.com/oauth/v1/authorize?response_type=code&client_id=N40WSXzBPjQNuf20TYXJuQ9yTO9VUdqC&scope=activity
+">Moves</a>
+
+<a href="https://api.moves-app.com/oauth/v1/access_token?grant_type=authorization_code&code=XUaK1qrzsZ42kqxuxj6xcQ32IQ4p0Y7W8wz35xz8BxKvZj_mtoA9YJPN3Ftd_NKk&client_id=N40WSXzBPjQNuf20TYXJuQ9yTO9VUdqC&client_secret=TbAZBRxj05VzrbtE8D6vlD2hmgmB630qaZ30azc_VAyFM54vgdIa5XEL5NaPhBFT&redirect_uri=http://localhost:63342/weightwin/track.html
+">Moves</a>
+
+<button type="button" name="click" id="calculate" onclick="doRequest();">Click me</button>
+
+</body>
+</html>
